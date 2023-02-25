@@ -1,0 +1,45 @@
+NAME:
+  ngrok - 將本地端口隧道化到公共 URL 並檢視流量
+
+USAGE:
+  ngrok [command] [flags]
+
+DESCRIPTION: 
+  ngrok 可將位於 NAT 和防火牆後的本地網路服務隧道化到公共互聯網上，並通過安全隧道進行連接。可以共享本地網站、建立/測試 Webhook 消費者和自托管個人服務。
+  使用 'ngrok help <command>' 可獲得每個命令的詳細說明。
+  打開 http://localhost:4040 可以檢視 ngrok 的 Web 介面流量。
+
+作者：
+  ngrok - <support@ngrok.com>
+
+服務條款：https://ngrok.com/tos
+
+範例： 
+  ngrok http 80                    # 將端口 80 的 Web 服務器隧道化到安全的公共 URL 上
+  ngrok http --subdomain=baz 8080  # 將端口 8080 隧道化到 baz.ngrok.io 上
+  ngrok http foo.dev:80            # 將主機:端口隧道化，而不是 localhost
+  ngrok http https://localhost     # 公開本地 https 服務器
+  ngrok tcp 22                     # 隧道化任意 TCP 流量到端口 22
+  ngrok tls --hostname=foo.com 443 # 隧道化 foo.com 上的 TLS 流量到端口 443
+  ngrok start foo bar baz          # 從配置文件中按名稱啟動隧道
+
+命令：
+  api                            使用 ngrok 代理作為 api 客戶端
+  completion                     為 bash 或 zsh 生成 shell 完成代碼
+  config                         更新或遷移 ngrok 的配置文件
+  credits                        打印作者和授權信息
+  diagnose                       診斷連接問題
+  help                           獲得任何命令的說明
+  http                           啟動 HTTP 隧道
+  service                        在目標操作系統上運行和控制 ngrok 服務
+  start                          從配置文件中按名稱啟動隧道
+  tcp                            啟動 TCP 隧道
+  tls                            啟動 TLS 隧道
+  tunnel                         啟動用於隧道組後端的隧道
+  update                         更新 ngrok 到最新版本
+  version                        打印版本字符串
+
+選項：
+      --config strings   配置文件的路徑；如果有多個，則會合併它們
+  -h, --help             獲得 ngrok 的幫助信息
+  -v, --version          獲得 ngrok 的版本
